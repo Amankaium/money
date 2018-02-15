@@ -29,7 +29,7 @@ body {
 
 .modern:hover,
 .modern.active {
-  color: #ffcb24;
+  color: #fafafa;
   /* #f5a603 можно потом применить */
   background: #2b2b2b;
 }
@@ -41,6 +41,10 @@ body {
 .bg-beeline{
   background-color: #d0c8ba;
   color: #333;
+}
+
+.bg-google{
+  background-color: #fafafa;
 }
 
 .bg-yellow{

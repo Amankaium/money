@@ -3,7 +3,7 @@
 
 {% block title %}
 
-  Запись
+  Отчёт
 
 {% endblock %}
 
@@ -11,32 +11,56 @@
 
   <form method="GET">
   {% bootstrap_form form %}
-  <input type="submit" value="Поиск" class="btn">
+  <input type="submit" value="Поиск" class="btn-lg pull-right">
   </form>
-  <hr>
 
-  <table class="table table-bordered table-hover table-striped">
-    <thead>
-      <tr>
-        <th class="text-center">Дата</th>
-        <th class="text-center">Описание</th>
-        <th class="text-center">Сумма</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for wave in waves %}
-        <tr>
-          <td class="text-center">{{ wave.date|date:"d.m.Y" }}</td>
-          <td>{{ wave.description }}</td>
-          <td class="text-center">{{ wave.money }}</td>
-        </tr>
-      {% endfor %}
-        <tr>
-          <td></td>
-          <td class="text-right">Итого</td>
-          <td class="text-center">{{ sum }}</td>
-        </tr>
-    </tbody>
-  </table>
+{% endblock %}
 
+{% block content %}
+<div class="panel panel-body">
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+        <p>Описание</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2">
+        <h4>Дата</h4>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 text-right">
+        <h4>Сумма ({{ sum }})</h4>
+      </div>
+    </div>
+    <hr>
+    {% for wave in waves %}
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+        <p>{{ wave.description }}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-2 col-md-offset-4 col-md-2 col-sm-offset-4 col-sm-2">
+        <h4>{{ wave.date|date:"d.m.Y" }}</h4>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-2 text-right">
+        <h4>{{ wave.money }}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+        <hr>
+      </div>
+    </div>
+  {% endfor %}
+    <div class="row">
+      <div class="col-lg-offset-4 col-lg-3 col-md-offset-4 col-md-3 col-sm-offset-4 col-sm-3 text-right">
+        <h3>Итого</h3>
+      </div>
+      <div class="col-lg-1 col-md-1 col-sm-1 text-right">
+        <h3>{{ sum }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
