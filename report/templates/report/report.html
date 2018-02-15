@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}
+
+  Запись
+
+{% endblock %}
+
+{% block page %}
+
+  <form method="GET">
+  {% bootstrap_form form %}
+  <input type="submit" value="Поиск" class="btn">
+  </form>
+  <hr>
+
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th class="text-center">Дата</th>
+        <th class="text-center">Описание</th>
+        <th class="text-center">Сумма</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for wave in waves %}
+        <tr>
+          <td class="text-center">{{ wave.date|date:"d.m.Y" }}</td>
+          <td>{{ wave.description }}</td>
+          <td class="text-center">{{ wave.money }}</td>
+        </tr>
+      {% endfor %}
+        <tr>
+          <td></td>
+          <td class="text-right">Итого</td>
+          <td class="text-center">{{ sum }}</td>
+        </tr>
+    </tbody>
+  </table>
+
+{% endblock %}
