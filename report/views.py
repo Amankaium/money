@@ -7,7 +7,9 @@ from .forms import ReportFilterForm
 @login_required(login_url='login')
 def report(request):
 
-    waves = Wave.objects.filter(user=request.user, date__gte=request.user.profile.time)
+    time = request.user.profile.time
+
+    waves = Wave.objects.filter(user=request.user)
 
     form = ReportFilterForm(request.GET)
 
