@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+class WaveType(models.Model):
+    name = models.CharField(max_length=50)
+
 class Wave(models.Model):
     user = models.ForeignKey(User, on_delete=None)
     description = models.CharField(max_length=300, verbose_name='Описание')

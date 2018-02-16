@@ -2,6 +2,7 @@
 
 {% url 'write' as url_write %}
 {% url 'report' as url_report %}
+{% url 'balance' as url_balance %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +13,7 @@
 
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-  <link rel="stylesheet" href="{% static 'css/beelinestyle.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -27,11 +28,17 @@
         <div class="panel panel-body">
           <div class="panel-body">
             {% block head %}
-            <h3 class="text-uppercase">
-              <a href="{{ url_write }}" class="btn btn-lg modern {% if request.path == url_write %} active {% endif %} ">Событие</a>
-              <a href="{{ url_report }}" class="btn btn-lg modern {% if request.path == url_report %} active {% endif %}">Отчёт</a>
-              <a href="{% url 'logout' %}" class="btn btn-lg modern pull-right">X</a>
-              </h3>
+            <h3 class="alert alert-success" role="alert">
+              {{ request.user.get_full_name }} <span class="badge badge-danger">{{ request.user.profile.balance }}</span>
+            </h3>
+            <div class="text-center">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <a href="{{ url_balance }}" class="btn btn-lg modern {% if request.path == url_balance %} active {% endif %} ">+</a>
+                <a href="{{ url_write }}" class="btn btn-lg modern {% if request.path == url_write %} active {% endif %} ">Событие</a>
+                <a href="{{ url_report }}" class="btn btn-lg modern {% if request.path == url_report %} active {% endif %}">Отчёт</a>
+                <a href="{% url 'logout' %}" class="btn btn-lg modern">x</a>
+              </div>
+            </div>
             {% endblock %}
             <hr>
           </div>

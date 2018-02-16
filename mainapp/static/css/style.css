@@ -1,0 +1,208 @@
+body {
+  font-family: "Times New Roman",Arial,sans-serif;
+  background-color: #fbfbfb;
+  overflow: auto;
+}
+
+.scale {
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+}
+
+.scale:hover,
+.navbar-default .navbar-nav>li>a.active {
+  color: #333;
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -o-transform: scale(1.4);
+}
+
+.modern {
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  color: #fafafa;
+  background: #2b2b2b;
+}
+
+.modern:hover,
+.modern.active {
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 90px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;
+}
+
+.excel {
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  font-stretch: normal;
+  color: #333;
+}
+
+.excel:hover,
+.excel.active {
+  color: green;
+}
+
+.bg-ruby{
+  background-color: #7B2324;
+}
+
+.bg-beeline{
+  background-color: #d0c8ba;
+  color: #333;
+}
+
+.bg-google{
+  background-color: #fafafa;
+}
+
+.bg-yellow{
+  background-color: #ffe100;
+}
+
+.bg-red {
+  background-color: #E21E25;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: #333;
+}
+
+.btn-red {
+  color: white;
+  background-color: #E21E35;
+}
+
+.btn-beeline {
+  color: #000000;
+  background-color: #ffe100;
+}
+
+.btn-red:hover,
+.btn-red:focus {
+  color: white;
+  background-color: #EC4D57;
+}
+
+.btn-beeline:hover,
+.btn-beeline:focus {
+  color: #000000;
+  background-color: #d0c8ba;
+}
+
+/* SIDE BAR */
+.sidebar {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0;
+  background-color: #d0c8ba;
+  overflow: auto;
+}
+
+/* SIDE BAR - HEADER */
+.sidebar > div:first-child {
+  padding: 30px 10px;
+  font-weight: bold;
+  font-size: 15px;
+  background-color: #d0c8ba;
+}
+
+.sidebar > div:first-child > h4 {
+  color: #000000;
+}
+
+.sidebar > div:first-child > h5 {
+  color: #000000;
+}
+
+/* SIDE BAR MENU */
+.sidebar .list-group{
+  padding: 0;
+  background-color: #d0c8ba;
+}
+
+.sidebar .list-group > span {
+  color: black;
+  display: block;
+  margin-top: 20px;
+  padding: 20px 30px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.sidebar .list-group .list-group-item,
+.sidebar .list-group .list-group-item:focus {
+  background-color: #d0c8ba;
+  color: #000000;
+  border: 0;
+  padding-left: 60px;
+  padding-right: 30px;
+}
+
+.sidebar .list-group .list-group-item.active,
+.sidebar .list-group .list-group-item:hover {
+  background-color: #fbfbfb;
+  color: #000000;
+}
+
+.sidebar .list-group .list-group-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.sidebar .list-group .list-group-item .badge,
+.sidebar .list-group .list-group-item.active .badge {
+  background-color: #E31E25;
+  color: #e0deeb;
+}
+
+/* SIDE BAR LOGOUT */
+.sidebar > div:last-child {
+  padding: 30px;
+}
+
+.sidebar > div:last-child .btn {
+  width: 100%;
+}
+
+/* SIDE BAR CONTENT */
+.content {
+  padding: 0 40px;
+}
+
+.content .panel {
+  border: none;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td {
+  vertical-align: middle;
+}
+
+.table,
+.table > thead > tr > th {
+  border-color: #d0c8ba;
+}
+
+.navbar {
+    background-color: #fbfbfb;
+}

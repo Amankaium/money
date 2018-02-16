@@ -4,19 +4,25 @@
 {% block title %}Авторизация{% endblock %}
 
 {% block head %}
-<h4 class="text-center">Добро пожаловать в помощник "Money Counter"!</h4>
+<h4 class="text-center">Добро пожаловать в помощник<br>Money Counter!</h4>
 <hr>
 <h3 class="text-uppercase text-center">
   Вход
 </h3>
 {% endblock %}
 
-<div>
+
 {% block page %}
+
+<div>
   <form method="POST">
     {% csrf_token %}
     {% bootstrap_form form %}
-    <button type="submit" class="btn-lg pull-right">Войти</button>
+    <button type="submit" class="btn btn-lg modern active pull-right">Войти</button>
+    <a class="btn btn-lg modern active" href="{% url 'sign-up' %}">Регистрация</a>
   </form>
+
 </div>
+
+
 {% endblock %}

@@ -5,7 +5,7 @@ from write import views as write_views
 
 urlpatterns = [
 
-    path('', write_views.write, name='homepage'),
+    path('', views.home, name='home'),
 
     path('login/', auth_views.login,
         {'template_name': 'main/login.html'},
@@ -14,4 +14,6 @@ urlpatterns = [
     path('logout/', auth_views.logout,
         {'next_page': '/'},
         name='logout'),
+
+    path('sign-up', views.sign_up, name='sign-up'),
 ]
