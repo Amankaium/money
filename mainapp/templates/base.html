@@ -13,6 +13,7 @@
 
   <title>{% block title %}{% endblock %}</title>
   <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'fa/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -33,10 +34,10 @@
             </h3>
             <div class="text-center">
               <div class="btn-group" role="group" aria-label="Basic example">
-                <a href="{{ url_balance }}" class="btn btn-lg modern {% if request.path == url_balance %} active {% endif %} ">+</a>
-                <a href="{{ url_write }}" class="btn btn-lg modern {% if request.path == url_write %} active {% endif %} ">Событие</a>
-                <a href="{{ url_report }}" class="btn btn-lg modern {% if request.path == url_report %} active {% endif %}">Отчёт</a>
-                <a href="{% url 'logout' %}" class="btn btn-lg modern">x</a>
+                <a href="{{ url_balance }}" class="btn btn-lg modern {% if request.path == url_balance %} active {% endif %} "><i class="fa fa-refresh fa-spin fa-fw" aria-hidden="true"></i></a>
+                <a href="{{ url_write }}" class="btn btn-lg modern {% if request.path == url_write %} active {% endif %} "><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                <a href="{{ url_report }}" class="btn btn-lg modern {% if request.path == url_report %} active {% endif %}"><i class="fa fa-list-ul" aria-hidden="true"></i></a>
+                <a href="{% url 'logout' %}" class="btn btn-lg modern"><i class="fa fa-sign-out" aria-hidden="true"></i></a>
               </div>
             </div>
             {% endblock %}
